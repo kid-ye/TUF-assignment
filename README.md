@@ -6,8 +6,6 @@ A fully interactive, responsive Wall Calendar component built with Next.js, Reac
 
 To run the project locally, run the following commands in your terminal:
 
-`ash
-
 # 1. Install dependencies
 
 npm install
@@ -15,11 +13,10 @@ npm install
 # 2. Start the development server
 
 npm run dev
-`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## ??? Tech Stack
+## Tech Stack
 
 - **Framework:** Next.js (App Router) & React
 - **Styling:** Tailwind CSS v4 (using CSS native `@theme` mapping)
@@ -27,7 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Icons:** `lucide-react`
 - **Fonts:** Outfit (via Google Fonts)
 
-## ??? Architecture & Design Choices
+## Architecture & Design Choices
 
 ### 1. The Design System
 
@@ -48,7 +45,7 @@ The `WallCalendar` handles complex multi-state mapping:
 - **Screen Reader Support:** Ensured semantic `aria-label` formatting (e.g., explicitly reading "April 1, 2026") rather than raw integer nodes, along with reactive `aria-pressed` states on the interactable grid buttons.
 - **UX Protections:** Added visual "tag" indicators alongside rapid "Clear Dates" functionality, ensuring users aren't friction-locked once they begin navigating.
 
-## ?? Repository Links
+## Repository Links
 
 - **Source Code:** [Replace this with your GitHub repository link]
 - **Live Demo:** [Replace this with your Vercel/live environment link]
