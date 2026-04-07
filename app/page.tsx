@@ -15,10 +15,6 @@ export default function Home() {
         <h1 className="text-5xl sm:text-7xl md:text-[8rem] font-black uppercase tracking-tighter mb-6 text-center leading-[0.85] text-bau-black">
           Calendar
         </h1>
-
-        <div className="bauhaus-border bg-bau-blue text-white px-8 py-3 text-xl sm:text-3xl font-bold uppercase tracking-widest shadow-bauhaus-sm rotate-[-2deg] active-press">
-          Form Follows Function
-        </div>
       </header>
 
       <main className="w-full max-w-4xl mx-auto relative z-10 px-0 sm:px-4">
