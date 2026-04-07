@@ -2,7 +2,7 @@
 
 A fully interactive, responsive Wall Calendar component built with Next.js, React, and Tailwind CSS v4. Features an avant-garde geometric Bauhaus design system with robust date-range selection and contextual note-taking capabilities.
 
-## ?? Getting Started
+## Getting Started
 
 To run the project locally, run the following commands in your terminal:
 
@@ -47,5 +47,5 @@ The `WallCalendar` handles complex multi-state mapping:
 
 ## Repository Links
 
-- **Source Code:** [Replace this with your GitHub repository link]
-- **Live Demo:** [Replace this with your Vercel/live environment link]
+- **Source Code:** https://github.com/kid-ye/TUF-assignment
+- **Live Demo:** https://tuffcal.vercel.app/
