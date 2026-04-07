@@ -26,8 +26,8 @@ export default function WallCalendar() {
   const days = useMemo(() => {
     const monthStart = startOfMonth(currentMonth);
     const monthEnd = endOfMonth(monthStart);
-    const gridStart = startOfWeek(monthStart, { weekStarts: 1 }); // Monday is 1
-    const gridEnd = endOfWeek(monthEnd, { weekStarts: 1 });
+    const gridStart = startOfWeek(monthStart, { weekStartsOn: 1 }); // Monday is 1
+    const gridEnd = endOfWeek(monthEnd, { weekStartsOn: 1 });
 
     return eachDayOfInterval({ start: gridStart, end: gridEnd });
   }, [currentMonth]);
@@ -95,10 +95,10 @@ export default function WallCalendar() {
           {/* Text Info */}
           <div className="relative z-20 w-full flex flex-col sm:flex-row sm:justify-between items-start sm:items-center text-white h-full justify-between">
             <div className="flex flex-col drop-shadow-[5px_5px_0px_#121212]">
-              <h2 className="text-6xl sm:text-7xl md:text-[7rem] font-black uppercase tracking-tighter leading-[0.8] mb-2 sm:mb-4">
+              <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-[7rem] font-black uppercase tracking-tighter leading-[0.8] mb-2 sm:mb-4 break-all sm:break-normal">
                 {format(currentMonth, "MMMM")}
               </h2>
-              <p className="text-3xl sm:text-5xl font-bold uppercase tracking-widest text-bau-yellow drop-shadow-[4px_4px_0px_#121212]">
+              <p className="text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-widest text-bau-yellow drop-shadow-[4px_4px_0px_#121212]">
                 {format(currentMonth, "yyyy")}
               </p>
             </div>
@@ -200,9 +200,9 @@ export default function WallCalendar() {
                     disabled={!isCurrentMonthDate}
                     aria-label={`${format(day, "MMMM d, yyyy")}`}
                     aria-pressed={isStart || isEnd || isInRange ? true : false}
-                    className={`h-12 sm:h-14 md:h-16 w-full flex items-center justify-center ${borderStyle} ${bgClasses} ${textClasses} ${hoverActive}`}
+                    className={`aspect-square sm:aspect-auto sm:h-14 md:h-16 w-full flex items-center justify-center ${borderStyle} ${bgClasses} ${textClasses} ${hoverActive}`}
                   >
-                    <span className="text-xl sm:text-2xl tracking-tighter">
+                    <span className="text-lg sm:text-2xl tracking-tighter">
                       {format(day, "d")}
                     </span>
                   </button>
