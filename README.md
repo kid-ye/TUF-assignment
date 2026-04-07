@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TUF Wall Calendar
 
-## Getting Started
+A fully interactive, responsive Wall Calendar component built with Next.js, React, and Tailwind CSS v4. Features an avant-garde geometric Bauhaus design system with robust date-range selection and contextual note-taking capabilities.
 
-First, run the development server:
+## ?? Getting Started
 
-```bash
+To run the project locally, run the following commands in your terminal:
+
+`ash
+
+# 1. Install dependencies
+
+npm install
+
+# 2. Start the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ??? Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js (App Router) & React
+- **Styling:** Tailwind CSS v4 (using CSS native `@theme` mapping)
+- **Date Management:** `date-fns` for robust immutable calendar math
+- **Icons:** `lucide-react`
+- **Fonts:** Outfit (via Google Fonts)
 
-## Learn More
+## ??? Architecture & Design Choices
 
-To learn more about Next.js, take a look at the following resources:
+### 1. The Design System
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Hard Geometry:** CSS polygons (`clip-path`), aggressive element rotations, and hard `4px 4px 0px 0px` box shadows to emulate physical, brutalist materials.
+- **Primary Colors:** Focused heavily on primary accent colors (`#D02020` Red, `#1040C0` Blue, `#F0C020` Yellow) offset against stark black borders and off-white backgrounds to ensure high contrast.
+- **Tailwind v4 Setup:** Leveraged the new inline `@theme` directives inside `app/globals.css` instead of ailwind.config.js to manage the aesthetic.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. State Management & Grid Logic
 
-## Deploy on Vercel
+The `WallCalendar` handles complex multi-state mapping:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Date Math:** Leveraged `date-fns` to reliably trace `startOfMonth` and `endOfWeek` spanning intervals cleanly outside of the standard 30-day limits.
+- **Selection Engine:** Built a custom interval engine allowing users to pick a start date, then smoothly attach an end date.
+- **Contextual Note Storage:** Implemented a single dictionary mapping (`notesData: Record<string, string>`) instead of deeply nesting object state. Selecting discrete arrays of dates automatically generates unique ID payloads to save text state bound dynamically.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. Polish & Accessibility
+
+- **Screen Reader Support:** Ensured semantic `aria-label` formatting (e.g., explicitly reading "April 1, 2026") rather than raw integer nodes, along with reactive `aria-pressed` states on the interactable grid buttons.
+- **UX Protections:** Added visual "tag" indicators alongside rapid "Clear Dates" functionality, ensuring users aren't friction-locked once they begin navigating.
+
+## ?? Repository Links
+
+- **Source Code:** [Replace this with your GitHub repository link]
+- **Live Demo:** [Replace this with your Vercel/live environment link]
